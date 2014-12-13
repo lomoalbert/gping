@@ -2,8 +2,13 @@
 
 __author__ = 'lomoalbert@gmail.com'
 
+
+#todo l18n
+
 from gi.repository import Gtk
 from gi.repository import GObject
+import os
+import platform
 import threading
 import struct
 import array
@@ -226,14 +231,20 @@ class Handler:
             self.t=None
 
 
+
+
 builder = Gtk.Builder()
 builder.add_from_file("mainwindow.glade")
 builder.connect_signals(Handler())
 
-grid = builder.get_object("grid1")
+if platform.system()=='Linux' and os.getuid() != 0:
+    button3 = builder.get_object("button3")
+    button3.set_sensitive(False)
+    msg='You must be root.'
+    statusbar = builder.get_object('statusbar1')
+    statusbar.push(1,msg)
 
 window = builder.get_object("window1")
-#window.set_icon_from_file("pping.png")
 window.show_all()
 
 Gtk.main()
