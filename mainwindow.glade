@@ -4,10 +4,10 @@
   <requires lib="gtk+" version="3.12"/>
   <object class="GtkWindow" id="window1">
     <property name="can_focus">False</property>
-    <property name="title" translatable="yes">pping</property>
+    <property name="title" translatable="yes">gping</property>
     <property name="default_height">300</property>
     <property name="hide_titlebar_when_maximized">True</property>
-    <property name="icon">pping.png</property>
+    <property name="icon">gping.png</property>
     <signal name="delete-event" handler="onDeleteWindow" swapped="no"/>
     <child>
       <object class="GtkBox" id="box1">
@@ -183,12 +183,12 @@
                 <property name="spacing">2</property>
                 <child>
                   <object class="GtkTextView" id="textview1">
-                    <property name="width_request">128</property>
+                    <property name="width_request">160</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">True</property>
                     <property name="position">0</property>
                   </packing>
@@ -197,7 +197,9 @@
                   <object class="GtkGrid" id="grid1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="column_spacing">3</property>
+                    <property name="border_width">4</property>
+                    <property name="row_spacing">1</property>
+                    <property name="column_spacing">9</property>
                     <child>
                       <object class="GtkLabel" id="label1">
                         <property name="visible">True</property>
